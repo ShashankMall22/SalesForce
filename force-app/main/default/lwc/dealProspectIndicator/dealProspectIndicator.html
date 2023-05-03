@@ -1,0 +1,23 @@
+<!-- //  @Description      :- This is a Component that used to provide for the update stages of Prospects
+//  @ Author              :- Darshan Rathi 
+// @ Group                :- Webvillee Technology pvt.ltd.
+// @ Last Modifield on    :- 05-04-2023
+// @ Last Modification by :- Darshan Rathi 
+// @ Modification Log      - 
+// Version           Date      Author         Modification
+// 1              24-03-2023   Darshan       Create this component
+// 2              05-03=-2023  Darshan       Add the Onclick Event -->
+
+<template>
+    <lightning-card>
+    <div class="slds-theme_default">
+        <div class="slds-p-around_medium" if:true={picklistValues}>
+            <lightning-progress-indicator  current-step={statusvalue} type="path" variant="base">
+                <template for:each={picklistValues.values} for:item="step">
+                    <lightning-progress-step label={step.label} value={step.value} key={step.label} onclick={onclickHandler}></lightning-progress-step>
+                </template>
+            </lightning-progress-indicator>   
+        </div>
+    </div>
+</lightning-card>
+</template>

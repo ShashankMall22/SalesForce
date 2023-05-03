@@ -1,0 +1,29 @@
+<!--@Description      :- This is a HTML file of a Component that shows no. of task pending for today for the particular Deal record.
+  @ Author              :- Shashank Mall
+ @ Group                :- Webvillee Technology pvt.ltd.
+ @ Last Modifield on    :- 07-04-2023
+ @ Last Modification by :- 
+ @ Modification Log      - 
+-->
+<template>
+    <lightning-card title="Pending Tasks for Today">
+        <template if:true={hasDealList}>
+            <div style="height: 300px; overflow: auto;">
+                <lightning-datatable
+                    key-field="Id"
+                    data={dealList}
+                    columns={columns}
+                    sorted-by="Due_Date__c"
+                    sorted-direction="asc"
+                    hide-checkbox-column
+                    resize-column-disabled
+                ></lightning-datatable>
+            </div>
+        </template>
+        <template if:false={hasDealList}>
+            <div class="slds-align_absolute-center">
+                <p>No pending tasks found for this deal</p>
+            </div>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,48 @@
+<!-- @Description      :- This is a Component that used to provide for the showing of task-interview  on the home page 
+ @ Author              :- Shashank Mall  
+@ Group                :- Webvillee Technology pvt.ltd.
+@ Last Modifield on    :- 12-04-2023
+@ Last Modification by :- Shashank Mall 
+@ Modification Log      - 
+Version           Date      Author         Modification
+1              10-04-2023   Shashank Mall      Create this Component 
+2.             13-04-2023   Darshan Rathi      Add description fields and update it on datatable     
+-->
+<template>
+  <!-- Displays a Lightning Card with the title "Tasks for Call" -->
+  <lightning-card  variant="Narrow"  title="Tasks For Email" icon-name="standard:folder" class="cardSpinner">
+      <!-- loader -->
+      <div if:true={showSpinner}>
+          <lightning-spinner
+              alternative-text="Loading..." variant="brand">
+          </lightning-spinner>
+      </div>
+      <!-- If there are records to display, show the data table -->
+      <template if:true={hasRecordList}>
+          <!-- Set the height and padding of the data table container -->
+              <!-- Display a Lightning Data Table with the records and columns provided -->
+              <c-l-w-c-custom-datatable-type key-field="Id" 
+              data={records} columns={columnss} 
+              onrowaction={handleRowAction} 
+              class="border" style="overflow:auto"
+              hide-checkbox-column="true" 
+              show-row-number-column="true"
+              onsave={handleSave} 
+              draft-values={draftValues}
+              onvalueselect={handleSelection} 
+              oncellchange={handleCellChange}
+              oncancel={handleCancel}>
+      </c-l-w-c-custom-datatable-type>
+              
+              
+      </template>
+      <!-- If there are no records to display, show a message -->
+      <template if:false={hasRecordList}>
+          <!-- Align the message to the center -->
+          <div class="slds-align_absolute-center">
+              <!-- Display a message indicating that there are no pending calls for today -->
+              <p>No pending calls for today</p>
+          </div>
+      </template>
+  </lightning-card>
+</template>

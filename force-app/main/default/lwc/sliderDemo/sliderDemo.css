@@ -1,0 +1,15 @@
+.slider {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease-out;
+    background: white;
+  }
+  
+  .slider.open {
+    height: 200px;
+    transform: translateY(-100%);
+  }
+  .close-btn {
+    display: flex;
+    justify-content: flex-end;
+  }

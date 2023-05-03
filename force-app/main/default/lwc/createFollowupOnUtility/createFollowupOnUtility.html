@@ -1,0 +1,28 @@
+<!-- @Description      :- This is a Component that used for the Update Followup indicator and open model and record form onclick event
+ @ Author              :- Darshan Rathi 
+@ Group                :- Webvillee Technology pvt.ltd.
+@ Last Modifield on    :- 24-03-2023
+@ Last Modification by :- Shashank Mall
+@ Modification Log      - 
+Version           Date      Author         Modification
+1              24-03-2023   Shashank       Add the update and Onclick Event
+2              30-03-2023   Darshan        Adding the modal and record page form for the followup.
+3              02-03-2023   Darshan        add the record-edit-form for the followup and      
+-->
+<!-- this template work for the progress indicator show the progress indicator -->
+<template>
+    <div>
+                        <lightning-record-edit-form object-api-name={followUpObject} onsuccess={showSuccessToast}>
+                            <lightning-messages></lightning-messages>
+                            <lightning-input-field field-name="Prospect_Name__c" value={recordId}></lightning-input-field>
+                            <lightning-input-field field-name="Name"> </lightning-input-field>
+                            <lightning-input-field field-name="Date__c"> </lightning-input-field>
+                            <lightning-input-field field-name="Notes_Attachment__c"></lightning-input-field>
+                            
+                            <div class="slds-m-top_medium slds-align_absolute-center">
+                                <lightning-button variant="brand" type="submit" name="save" label="Save Followups">
+                                </lightning-button>
+                            </div>
+                        </lightning-record-edit-form>
+    </div>
+</template>

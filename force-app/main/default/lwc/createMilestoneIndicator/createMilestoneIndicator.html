@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+    <div class="slds-theme_default">
+        <div class="slds-p-around_medium" if:true={picklistValues}>
+            <lightning-progress-indicator  current-step={monthValue} type="path" variant="base">
+                <template for:each={picklistValues.values} for:item="step">
+                    <lightning-progress-step label={step.label} value={step.value} key={step.label} onclick={onclickHandler}></lightning-progress-step>
+                </template>
+            </lightning-progress-indicator>   
+        </div>
+    </div>
+</lightning-card>
+</template>

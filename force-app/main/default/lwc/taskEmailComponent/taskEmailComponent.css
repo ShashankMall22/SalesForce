@@ -1,0 +1,10 @@
+.datatable-container {
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    min-height: 5rem;
+  }
+  .ss{
+    margin-bottom: 0;
+  }

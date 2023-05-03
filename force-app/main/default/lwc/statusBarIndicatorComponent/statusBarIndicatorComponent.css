@@ -1,0 +1,9 @@
+.regular{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.THIS.slds-readonly-path{
+    pointer-events: none;
+}

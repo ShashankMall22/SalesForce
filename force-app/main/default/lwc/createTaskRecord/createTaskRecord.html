@@ -1,0 +1,43 @@
+<!--  
+    @Description      :- This is a HTML file of a Component that create Company Task records on record page using record-form.
+  @ Author              :- Shashank Mall
+ @ Group                :- Webvillee Technology pvt.ltd.
+ @ Last Modifield on    :- 26-03-2023
+ @ Last Modification by :- 
+ @ Modification Log      - 
+-->
+<template>
+    <!-- Display a lightning card with a title -->
+    <lightning-card title="Create Task Records">
+        <!-- Render a lightning record edit form with the task object and fields passed in -->
+        <lightning-record-edit-form
+            object-api-name={taskObject}
+            record-id={recordId}
+            onsuccess={handleAccountCreated}
+            onerror={handleError}>
+            <lightning-messages></lightning-messages>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name="Name"></lightning-input-field>
+                    <lightning-input-field field-name="Subject__c"></lightning-input-field>
+                    <lightning-input-field field-name="Status__c"></lightning-input-field>
+                    <lightning-input-field field-name="Reminder__c"></lightning-input-field>
+                    <lightning-input-field field-name="Prospect__c" value={recordId}></lightning-input-field>
+                    <lightning-input-field field-name="Priority__c"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input-field field-name="Due_Date__c"></lightning-input-field>
+                    <lightning-input-field field-name="Description__c"></lightning-input-field>
+                    <lightning-input-field field-name="Deal__c" value={recordId}></lightning-input-field>
+                    <lightning-input-field field-name="Company_Contact__c" value={recordId}></lightning-input-field>
+                    <lightning-input-field field-name="Company__c" value={recordId}></lightning-input-field>
+                   
+                </div>
+            </div>
+            <!-- Display a lightning button to submit the form -->
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-button type="submit" label="Create Task"></lightning-button>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

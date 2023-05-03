@@ -1,0 +1,40 @@
+.slds-box_header {
+        background-color: orange;
+        padding: 0.5rem;
+        border-bottom: 1px solid #d8dde6;
+    }
+
+    .slds-box_title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: black;
+        background-color: wheat;
+    }
+
+    .slds-box_body {
+        background-color: #fafafa;
+        border-radius: 0.25rem;
+        padding: 1rem;
+        box-shadow: 0px 1px 3px lightgrey(0, 0, 0, 0.15);
+    }
+
+    .slds-text-color_inverse {
+        color: #ffffff;
+    }
+
+    .slds-text-heading_medium {
+        font-size: 2.25rem;
+        font-weight: 700;
+        margin-top: 1rem;
+        margin-bottom: 0;
+        line-height: 1;
+        letter-spacing: -0.025rem;
+    }
+
+    .slds-align_absolute-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 5rem;
+        background-color: lightgrey;
+    }

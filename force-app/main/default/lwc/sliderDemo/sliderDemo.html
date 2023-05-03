@@ -1,0 +1,15 @@
+<template>
+  <div>
+    <!-- A chevron icon that acts as a button to toggle the slider -->
+    <lightning-icon icon-name="utility:chevronup" onclick={handleClick}></lightning-icon>
+  </div>
+  <!-- A div container that holds the slider content, the CSS class is computed dynamically based on the isSliderOpen value -->
+  <div class={sliderClass}>
+    <lightning-layout>
+      <lightning-layout-item size="12" padding="slds-p-around_medium">
+        <!-- A button that serves as the close button for the slider -->
+        <lightning-button variant="base" label="X" title="Looks like a link" onclick={handleClose} class="slds-m-left_x-small close-btn"></lightning-button> 
+      </lightning-layout-item>
+    </lightning-layout>
+  </div>
+</template>

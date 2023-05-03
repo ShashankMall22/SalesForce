@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Task Status = Call">
+    <table>
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Task Subject</th>
+                <th>Prospect Name</th>
+                <th>Deal Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template if:true={taskList.data}>
+                <template for:each={taskList.data} for:item="task">
+                    <tr key={task.Id}>  
+                        <td>{task.Name}</td>
+                        <td>{task.Subject__c}</td>
+                        <td>{task.Prospect__r.Name}</td>
+                        <td>{task.Deal__r.Name}</td>
+                    </tr>
+                </template>
+            </template>
+        </tbody>
+    </table>
+</lightning-card>
+</template>
+

@@ -1,0 +1,51 @@
+<!--@Description      :- This is a HTML file of a Component that shows no. of task pending for today. And on a click of a button you can change your task stage.
+  @ Author              :- Shashank Mall
+ @ Group                :- Webvillee Technology pvt.ltd.
+ @ Last Modifield on    :- 17-04-2023
+ @ Last Modification by :- Shashank Mall
+ @ Modification Log      - 
+ Version           Date         Author         Modification
+ 1.              17-04-2023   Shashank Mall      Add the handleSave event.
+
+    -->
+<template>
+    <!-- Render the modal if showModal is true -->
+    <template if:true={showModal}>
+        <!-- Create a modal container -->
+        <div class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Add a header to the modal with a close button -->
+                <header class="slds-modal__header">
+                  <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={hideModalBox}>
+                      <lightning-icon icon-name="utility:close"
+                      onclick={closeModal}
+                         alternative-text="close"
+                         variant="inverse"
+                         size="small" ></lightning-icon>
+                      <span class="slds-assistive-text">Close</span>
+                   </button>
+                    <h2 class="slds-text-heading_medium">Tasks Due Today</h2>
+                </header>
+                <!-- Add content to the modal, which is a datatable with task data -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-datatable
+                        data={taskData}
+                        columns={columns}
+                        key-field="Id"
+                        onrowaction={handleRowAction}
+                        hide-checkbox-column="true"
+                        onsave={handleSave}
+                    ></lightning-datatable>
+                </div>
+                <!-- Add a footer to the modal with a close button -->
+                <footer class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal}>
+                        Close
+                    </button>
+                </footer>
+            </div>
+        </div>
+        <!-- Add a backdrop to the modal -->
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    </template>

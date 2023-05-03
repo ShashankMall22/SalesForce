@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-theme_default">
+        <div class="slds-readonly-path"> 
+            {checkData}
+            <h1 class="regular">Followups Progress Indicator</h1>
+            <div class="slds-p-around_medium"> 
+            <lightning-progress-indicator type="path" current-step={selectedStep}>
+                <template for:each={steps} for:item="step">
+                    <lightning-progress-step  key={step.label} label={step.label} value={step.value} 
+                    onclick={onclickHandler}>
+                    </lightning-progress-step>
+                </template>
+            </lightning-progress-indicator> 
+            </div>
+        </div>
+    </div>
+</template>

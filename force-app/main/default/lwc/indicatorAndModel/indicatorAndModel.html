@@ -1,0 +1,71 @@
+<!-- @Description      :- This is a Component that used for the Update Followup indicator and open model and record form onclick event
+ @ Author              :- Darshan Rathi 
+@ Group                :- Webvillee Technology pvt.ltd.
+@ Last Modifield on    :- 24-03-2023
+@ Last Modification by :- Shashank Mall
+@ Modification Log      - 
+Version           Date      Author         Modification
+1              24-03-2023   Shashank       Add the update and Onclick Event
+2              30-03-2023   Darshan        Adding the modal and record page form for the followup.
+3              02-03-2023   Darshan        add the record-edit-form for the followup and      
+-->
+<!-- this template work for the progress indicator show the progress indicator -->
+<template>
+    <div>
+        <div class="slds-theme_default">
+            <div class="slds-readonly-path">
+                {checkData}
+                <h1 class="regular">Followups Progress Indicator</h1>
+                <div class="slds-p-around_medium ">
+                    <lightning-progress-indicator type="path" current-step={selectedStep}>
+                        <template for:each={steps} for:item="step">
+                            <lightning-progress-step key={step.label} label={step.label} onclick={onclickHandler}
+                                value={step.value}>
+                            </lightning-progress-step>
+                        </template>
+                    </lightning-progress-indicator> 
+                    <h5 style="text-align: center;" class="slds-p-around_medium">Above Indicator Show How many followup's were taken till know </h5>
+                </div>
+            </div>
+        </div>
+        <template if:true={isModalOpen}>
+            <!-- Modal/Popup Box LWC starts here when the user click on followup indicator then this model is open   -->
+
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box LWC header here -->
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                            title="Close" onclick={closeModal}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                size="small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h3>Create Followups</h3>
+                         <!-- <c-object-type-selection></c-object-type-selection> -->   
+                    </header>
+                            
+                            
+                     <!-- this is record edit form that create the record on the followup record page with the help of record id and prepoplulate the record name 
+                       on the creating of the followup record page  -->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <lightning-record-edit-form object-api-name={followUpObject} onsuccess={showSuccessToast}>
+                            <lightning-input-field field-name="Prospect_Name__c" value={recordId}
+                                ></lightning-input-field>
+                            <lightning-input-field field-name="Name"> </lightning-input-field>
+                            <lightning-input-field field-name="Date__c"> </lightning-input-field>
+                            <lightning-input-field field-name="Notes_Attachment__c"></lightning-input-field>
+                            <div class="slds-m-top_medium  Button">
+                                <lightning-button variant="brand" type="submit" name="save" label="Save Followups">
+                                </lightning-button>
+                            </div>
+                        </lightning-record-edit-form>
+                    </div>
+                    <!-- Modal/Popup Box LWC footer starts here -->
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </template>
+    </div>
+</template>

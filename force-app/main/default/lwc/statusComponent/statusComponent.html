@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="Prospect Status">
+        <template for:each={prospectStatusValues} for:item="prospectStatus">
+            <lightning-button key={prospectStatus.value} label={prospectStatus.label} onclick={handleStatusChange} variant="brand"></lightning-button>
+        </template>
+    </lightning-card>
+</template>

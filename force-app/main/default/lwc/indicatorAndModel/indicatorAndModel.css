@@ -1,0 +1,21 @@
+.regular{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.THIS.slds-readonly-path{
+    pointer-events: none;
+}
+h3 {
+    font-size: 1.5rem; /* adjust to your preference */
+    font-weight: bold; /* or adjust to your preference */
+    line-height: 1.2; /* adjust to your preference */
+    margin-bottom: 1rem; /* or adjust to your preference */
+    color: #333; /* or adjust to your preference */
+  }
+
+  .Button{
+    display: flex;
+    justify-content: center;
+  }
